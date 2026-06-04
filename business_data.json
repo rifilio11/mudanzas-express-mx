@@ -1,0 +1,171 @@
+{
+  "negocio": {
+    "nombre": "Mudanzas Express MX",
+    "tipo": "Empresa de Fletes y Mudanzas",
+    "slogan": "Movemos lo que más importa, con seguridad y puntualidad.",
+    "descripcion": "Empresa especializada en mudanzas locales, fletes urgentes, transporte de muebles y reubicaciones residenciales y comerciales en el Estado de México y Ciudad de México.",
+    "calificacion": "4.9 estrellas (187 reseñas Google)",
+    "precio_promedio": "$1,200 - $8,500 MXN",
+    "direccion": "Av. Constitución 100, Cuautitlán Izcalli, Estado de México",
+    "telefono": "55 1234 5678",
+    "whatsapp": "525512345678",
+    "facebook": "https://facebook.com/mudanzasexpressmx",
+    "instagram": "https://instagram.com/mudanzasexpressmx",
+    "horario": {
+      "Lunes": "7:00 a.m. - 9:00 p.m.",
+      "Martes": "7:00 a.m. - 9:00 p.m.",
+      "Miércoles": "7:00 a.m. - 9:00 p.m.",
+      "Jueves": "7:00 a.m. - 9:00 p.m.",
+      "Viernes": "7:00 a.m. - 9:00 p.m.",
+      "Sábado": "7:00 a.m. - 8:00 p.m.",
+      "Domingo": "8:00 a.m. - 5:00 p.m."
+    },
+    "servicios": [
+      "Mudanzas Residenciales",
+      "Mudanzas Comerciales",
+      "Fletes Locales",
+      "Fletes Urgentes",
+      "Empaque Profesional",
+      "Carga y Descarga",
+      "Transporte de Muebles",
+      "Traslado de Oficinas"
+    ],
+    "ventajas": [
+      "Más de 10 años de experiencia",
+      "Cobertura en Estado de México y CDMX",
+      "Personal capacitado",
+      "Atención rápida",
+      "Protección de mobiliario",
+      "Cotización sin compromiso"
+    ]
+  },
+  "menu": {
+    "mudanzas": {
+      "descripcion": "Servicios completos de mudanza.",
+      "items": [
+        {
+          "nombre": "Mudanza Local Básica",
+          "precio": 1200,
+          "descripcion": "Traslado de muebles y pertenencias dentro de la misma ciudad."
+        },
+        {
+          "nombre": "Mudanza Residencial Completa",
+          "precio": 4500,
+          "descripcion": "Incluye transporte, carga y descarga."
+        },
+        {
+          "nombre": "Mudanza Premium",
+          "precio": 8500,
+          "descripcion": "Incluye empaque profesional, protección y transporte."
+        }
+      ]
+    },
+    "fletes": {
+      "descripcion": "Servicio rápido para mercancías y muebles.",
+      "items": [
+        {
+          "nombre": "Flete Económico",
+          "precio": 900,
+          "descripcion": "Ideal para objetos pequeños o medianos."
+        },
+        {
+          "nombre": "Flete Empresarial",
+          "precio": 2500,
+          "descripcion": "Transporte para equipos y mobiliario comercial."
+        }
+      ]
+    },
+    "extras": {
+      "descripcion": "Servicios complementarios.",
+      "items": [
+        {
+          "nombre": "Empaque Profesional",
+          "precio": 800,
+          "descripcion": "Protección especializada para objetos delicados."
+        },
+        {
+          "nombre": "Carga y Descarga",
+          "precio": 600,
+          "descripcion": "Personal capacitado para maniobras seguras."
+        }
+      ]
+    }
+  },
+  "resenas_destacadas": [
+    {
+      "autor": "Carlos Hernández",
+      "calificacion": 5,
+      "texto": "Llegaron puntuales, cuidaron todos mis muebles y terminaron antes de lo previsto."
+    },
+    {
+      "autor": "María González",
+      "calificacion": 5,
+      "texto": "Excelente atención y comunicación durante todo el proceso."
+    },
+    {
+      "autor": "Luis Ramírez",
+      "calificacion": 5,
+      "texto": "Mudaron toda mi oficina sin afectar nuestras operaciones."
+    }
+  ],
+  "seo": {
+    "palabras_clave": [
+      "mudanzas en cuautitlan izcalli",
+      "fletes en cuautitlan izcalli",
+      "empresa de mudanzas estado de mexico",
+      "mudanzas locales cdmx",
+      "fletes urgentes estado de mexico",
+      "transporte de muebles cuautitlan"
+    ],
+    "ciudad": "Cuautitlán Izcalli",
+    "estado": "Estado de México",
+    "pais": "México"
+  },
+  "colores_marca": {
+    "primario": "#F97316",
+    "secundario": "#111827",
+    "acento": "#FFFFFF"
+  },
+  "assets": {
+    "hero_video": {
+      "nombre_archivo": "hero-video.mp4",
+      "descripcion": "Video cinematográfico donde una composición de mudanza profesional se descompone en piezas flotantes y vuelve a ensamblarse representando eficiencia, organización y confianza."
+    },
+    "story_video": {
+      "nombre_archivo": "story-video.mp4",
+      "descripcion": "Video narrativo Problema → Solución → Resultado mostrando una mudanza profesional sin estrés."
+    },
+    "logo": {
+      "nombre_archivo": "logo.png"
+    }
+  },
+  "conversion": {
+    "cta_principal": "Solicitar Cotización",
+    "cta_secundario": "Enviar WhatsApp",
+    "objetivo": "Generación de Leads"
+  }
+  ,
+"faq": [
+  {
+    "pregunta": "¿Realizan mudanzas el mismo día?",
+    "respuesta": "Sí, contamos con servicio de fletes y mudanzas urgentes sujeto a disponibilidad."
+  },
+  {
+    "pregunta": "¿Protegen los muebles durante el traslado?",
+    "respuesta": "Sí, utilizamos materiales de protección y técnicas profesionales para evitar daños."
+  },
+  {
+    "pregunta": "¿Trabajan en CDMX y Estado de México?",
+    "respuesta": "Sí, brindamos cobertura en toda la Ciudad de México y Estado de México."
+  },
+  {
+    "pregunta": "¿Pueden trasladar oficinas completas?",
+    "respuesta": "Sí, realizamos mudanzas comerciales y reubicaciones corporativas."
+  },
+  {
+    "pregunta": "¿Cómo solicito una cotización?",
+    "respuesta": "Puedes contactarnos por teléfono, WhatsApp o mediante el formulario web."
+  }
+]
+}
+

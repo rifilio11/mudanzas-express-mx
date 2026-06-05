@@ -24,7 +24,7 @@ const [leadData, setLeadData] = useState({
   servicio: ""
 });
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMessage = {
@@ -102,33 +102,41 @@ if (chatStep === "asking_phone") {
   return;
 }
 if (chatStep === "asking_service") {
-
-  setLeadData((prev) => ({
-    ...prev,
+  const updatedLead = {
+    ...leadData,
     servicio: input
-  }));
-console.log({
-  nombre: leadData.nombre,
-  telefono: leadData.telefono,
-  servicio: input
-});
+  };
+
+  setLeadData(updatedLead);
+
+  try {
+    await fetch("/api/leads", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedLead),
+    });
+  } catch (error) {
+    console.error("Error guardando lead:", error);
+  }
+
   setMessages((prev) => [
     ...prev,
     userMessage,
     {
       role: "assistant",
       content:
-        "Excelente. Hemos registrado tu información. Ahora puedes continuar con un asesor.",
-      whatsapp: true
-    }
+        "Perfecto. Hemos registrado tu información. Un asesor continuará por WhatsApp.",
+      whatsapp: true,
+    },
   ]);
 
-  setChatStep("completed");
+  setChatStep("idle");
   setInput("");
 
   return;
-}
-    if (
+}    if (
   question.includes("precio") ||
   question.includes("costo") ||
   question.includes("cuanto")

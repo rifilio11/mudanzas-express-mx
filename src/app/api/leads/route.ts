@@ -8,6 +8,21 @@ export async function POST(request: Request) {
 
     const { nombre, telefono, servicio } = body;
 
+    console.log("=== DIAGNOSTICO PRIVATE KEY ===");
+console.log("LONGITUD:", process.env.GOOGLE_PRIVATE_KEY?.length);
+console.log(
+  "TIENE BEGIN:",
+  process.env.GOOGLE_PRIVATE_KEY?.includes("BEGIN PRIVATE KEY")
+);
+console.log(
+  "TIENE \\n:",
+  process.env.GOOGLE_PRIVATE_KEY?.includes("\\n")
+);
+console.log(
+  "TIENE SALTO REAL:",
+  process.env.GOOGLE_PRIVATE_KEY?.includes("\n")
+);
+
     const auth = new google.auth.GoogleAuth({
       credentials: {
         project_id: process.env.GOOGLE_PROJECT_ID,

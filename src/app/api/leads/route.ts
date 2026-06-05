@@ -1,13 +1,19 @@
+import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  return NextResponse.json({
-    sheetId: process.env.GOOGLE_SHEET_ID,
-    projectId: process.env.GOOGLE_PROJECT_ID,
-    email: process.env.GOOGLE_CLIENT_EMAIL,
-    privateKeyLength: process.env.GOOGLE_PRIVATE_KEY?.length,
-    hasBegin: process.env.GOOGLE_PRIVATE_KEY?.includes("BEGIN PRIVATE KEY"),
-    hasSlashN: process.env.GOOGLE_PRIVATE_KEY?.includes("\\n"),
-    hasRealLineBreak: process.env.GOOGLE_PRIVATE_KEY?.includes("\n"),
-  });
+  try {
+    const privateKey =
+      process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+    return NextResponse.json({
+      length: privateKey?.length,
+      first30: privateKey?.substring(0, 30),
+      last30: privateKey?.substring(privateKey.length - 30),
+    });
+  } catch (error) {
+    return NextResponse.json({
+      error,
+    });
+  }
 }

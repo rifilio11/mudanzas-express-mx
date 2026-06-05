@@ -1,19 +1,60 @@
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function POST(request: Request) {
   try {
-    const privateKey =
-      process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+    const body = await request.json();
+
+    const { nombre, telefono, servicio } = body;
+
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        project_id: process.env.GOOGLE_PROJECT_ID,
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      },
+      scopes: [
+        "https://www.googleapis.com/auth/spreadsheets",
+      ],
+    });
+
+    const sheets = google.sheets({
+      version: "v4",
+      auth,
+    });
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
+      range: "A:E",
+      valueInputOption: "USER_ENTERED",
+      requestBody: {
+        values: [
+          [
+            new Date().toLocaleString("es-MX"),
+            nombre,
+            telefono,
+            servicio,
+            "Mudanzas Express MX",
+          ],
+        ],
+      },
+    });
 
     return NextResponse.json({
-      length: privateKey?.length,
-      first30: privateKey?.substring(0, 30),
-      last30: privateKey?.substring(privateKey.length - 30),
+      success: true,
     });
+
   } catch (error) {
-    return NextResponse.json({
-      error,
-    });
+    console.error("ERROR GOOGLE SHEETS:", error);
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: String(error),
+      },
+      {
+        status: 500,
+      }
+    );
   }
 }
